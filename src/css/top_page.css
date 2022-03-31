@@ -8,9 +8,13 @@
 }
 .top-page-service{
 	background-color: white;
+	padding-top: 130px;
+	margin-top: -60px;
 }
 .top-page-portfolio {
 	background-color: white;
+	padding-top: 60px;
+	margin-top: -60px;
 }
 
 .top-page-service-detail-text{

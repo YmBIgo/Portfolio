@@ -1,0 +1,37 @@
+.hr-small{
+	width: 100px;
+	margin: 20px auto;
+}
+
+.top-page-header{
+	background-color: white;
+}
+.top-page-service{
+	background-color: white;
+}
+.top-page-portfolio {
+	background-color: white;
+}
+
+.top-page-service-detail-text{
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.top-page-service-detail-text-inner {
+	text-align: left;
+	margin-top: 30px;
+}
+
+.portfolio-image{
+	width: 90%;
+	margin-left: 5%;
+}
+.portfolio-title{
+	margin: 10px 0
+}
+.portfolio-text {
+	width: 90%;
+	margin: 10px 5%;
+	text-align: left;
+}

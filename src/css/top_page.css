@@ -3,18 +3,88 @@
 	margin: 20px auto;
 }
 
-.top-page-header{
+.top-page-navbar{
 	background-color: white;
 }
+.top-page-header{
+	padding-top: -60px;
+}
+.top-page-header2{
+	padding-top: 80px;
+	margin-top: -60px;
+}
 .top-page-service{
-	background-color: white;
-	padding-top: 130px;
+	/*background-color: white;*/
+	padding-top: 90px;
 	margin-top: -60px;
 }
 .top-page-portfolio {
 	background-color: white;
 	padding-top: 60px;
 	margin-top: -60px;
+}
+
+.top-page-header-black-section{
+	background-color: black;
+	height: 900px;
+	z-index: 2000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+.top-page-header-black-section.slidein.is-animated {
+	animation: slideIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+
+@keyframes slideIn {
+	0% {
+		transform:  translateY(0);
+	}
+	100% {
+		transform: translateY(0);
+		height: 0px;
+	}
+	0%, 90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.top-page-header2-title {
+	padding-top: 60px;
+}
+.top-page-header2-title h1 {
+/*	text-align: left;
+	padding-top: 80px;
+	padding-left: 50px;*/
+}
+.top-page-header2-img {
+	margin-top: -25px;
+	height: 200px;
+	width: 100%;
+	background-image: url("https://storage.googleapis.com/kurihara_kazuya_image/header/meeting_Header3.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.smooth-header2-title {
+  clip-path: inset(0 100% 0 0);
+  display: inline-block;
+  font-size: 36px;
+  font-weight: bold;
+  transition: 1.2s cubic-bezier(0.37, 0, 0.63, 1);
+  transition-property: clip-path;
+  line-height: 1;
+  height: 40px;
+  margin-top: 15px;
+}
+.smooth-header2-title.is-animated {
+  clip-path: inset(0);
 }
 
 .top-page-service-detail-text{

@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {useSelector, useDispatch} from "react-redux"
 
 import {Link} from "react-router-dom"
@@ -21,10 +21,21 @@ const TopPage: React.FC<Props> = () => {
 	const dispatch = useDispatch()
 	const language = useSelector((state: RootState) => state.language)
 
+	useEffect(() => {
+		const smooth_title = document.getElementsByClassName("smooth-header2-title")[0] as HTMLHeadingElement
+		setTimeout(() => {
+			smooth_title.classList.add("is-animated")
+		}, 1000)
+	}, [])
+
 	return(
 		<>
 			<div className="top-page-header">
-				<Navbar className="fixed-top" bg="light">
+				<div className="top-page-header-black-section slidein anim is-animated">
+				</div>
+			</div>
+			<div className="top-page-navbar">
+				<Navbar className="fixed-top" style={{backgroundColor: "white"}}>
 				  <Container>
 				    <Navbar.Brand href="#home">Kazuya Kurihara</Navbar.Brand>
 				    <Navbar.Toggle />
@@ -47,6 +58,15 @@ const TopPage: React.FC<Props> = () => {
 				    </Nav>
 				  </Container>
 				</Navbar>
+			</div>
+			<div className="top-page-header2">
+				<div className="top-page-header2-title">
+					<h1 className="smooth-header2-title">
+						Kazuya Kurihara
+					</h1>
+					<div className="top-page-header2-img">
+					</div>
+				</div>
 			</div>
 			<div className="top-page-service" id="about">
 				<h3 className="text-center">

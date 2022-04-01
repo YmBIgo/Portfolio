@@ -68,6 +68,55 @@ const TopPage: React.FC<Props> = () => {
 					</div>
 				</div>
 			</div>
+			<div className="top-page-concept">
+				<div className="row">
+					<div className="col-6">
+						<div className="top-page-concept-left">
+							<hr className="left-hr" />
+							<h3>
+								Policy
+								<br />
+								<small>理念</small>
+							</h3>
+							<div className="row">
+								<div className="col-1">
+									「
+								</div>
+								<div className="col-10">
+									<p className="top-page-concept-left-content">
+										テストテストテストテストテスト
+									</p>
+								</div>
+								<div className="col-1">
+									<div style={{marginTop:"100px"}}>
+										」
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="col-6">
+						<div className="top-page-concept-right">
+							<p className="top-page-concept-right-content">
+								テストテストテストテストテスト
+								<br />
+								テストテストテストテストテストテスト
+								<br />
+								テストテストテストテストテストテストテストテストテスト
+								<br />
+								テストテストテストテストテストテストテストテストテスト
+								<br />
+								テストテストテストテストテストテストテストテストテスト
+								<br />
+								テストテストテストテストテストテストテストテストテスト
+							</p>
+							<button className="btn btn-secondary">
+								詳細はこちら
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div className="top-page-service" id="about">
 				<h3 className="text-center">
 					{ language.language == "ja" && <>サービス</>}

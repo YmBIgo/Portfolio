@@ -2,7 +2,9 @@
 	width: 100px;
 	margin: 20px auto;
 }
-
+.left-hr{
+	width: 200px;
+}
 .top-page-navbar{
 	background-color: white;
 }
@@ -13,10 +15,16 @@
 	padding-top: 80px;
 	margin-top: -60px;
 }
+.top-page-concept{
+	position: relative;
+	z-index: 1;
+}
 .top-page-service{
-	/*background-color: white;*/
+	background-color: black;
+	color: white;
 	padding-top: 90px;
-	margin-top: -60px;
+	/*margin-top: -60px;*/
+	z-index: 100;
 }
 .top-page-portfolio {
 	background-color: white;
@@ -87,6 +95,52 @@
   clip-path: inset(0);
 }
 
+.top-page-concept-left{
+	background-color: rgba(100, 100, 100, .15);
+	height: 500px;
+	text-align: left;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 70px;
+	animation: slideUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+	}
+	40%, 100%{
+		opacity: 1;
+	}
+}
+
+.top-page-concept-left h3 {
+	padding-top: 20px;
+	font-size: 80px;
+	line-height: 50px;
+}
+.top-page-concept-left h3 small{
+	font-size: 20px;
+}
+.top-page-concept-left-content {
+	font-size: 40px;
+}
+
+.top-page-concept-right {
+	animation: slideUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+	width: 80%;
+	margin: 0 10%;
+	text-align: left;
+	padding-top: 150px;
+}
+.top-page-concept-right-content{
+	line-height: 30px;
+}
+
 .top-page-service-detail-text{
 	width: 80%;
 	margin-left: 10%;
@@ -95,6 +149,7 @@
 .top-page-service-detail-text-inner {
 	text-align: left;
 	margin-top: 30px;
+	padding-bottom: 80px;
 }
 
 .portfolio-image{

@@ -13,6 +13,7 @@ import "../css/top_page.css"
 import {BsCodeSlash,
 		BsVectorPen} from "react-icons/bs"
 import {FaLanguage} from "react-icons/fa"
+import {SiMinutemailer} from "react-icons/si"
 
 type Props = {}
 
@@ -26,6 +27,15 @@ const TopPage: React.FC<Props> = () => {
 		setTimeout(() => {
 			smooth_title.classList.add("is-animated")
 		}, 1000)
+		const portfolio_title = document.getElementsByClassName("top-page-portfolio")[0] as HTMLHeadingElement
+		window.addEventListener('scroll', function(){
+			const scroll = window.scrollY
+			const height = window.innerHeight
+			const pos = portfolio_title.getBoundingClientRect().top + scroll
+			if (scroll > pos - height + 100 ) {
+				portfolio_title.classList.add('is_animated')
+			}
+		})
 	}, [])
 
 	return(
@@ -35,24 +45,32 @@ const TopPage: React.FC<Props> = () => {
 				</div>
 			</div>
 			<div className="top-page-navbar">
-				<Navbar className="fixed-top" style={{backgroundColor: "white"}}>
+				<Navbar className="fixed-top" style={{backgroundColor: "black"}}>
 				  <Container>
-				    <Navbar.Brand href="#home">Kazuya Kurihara</Navbar.Brand>
+				    <Navbar.Brand
+				    	href="#home"
+				    	style={{color: "white"}}
+				    >
+				    	K Kurihara
+				    </Navbar.Brand>
 				    <Navbar.Toggle />
 				    <Nav className="justify-content-end">
-				      <Nav.Link href="#about">
-				        About
-				      </Nav.Link>
-				      <Nav.Link href="#works">	
-				      	Works
-				      </Nav.Link>
-				      <Nav.Link onClick={() => dispatch(change_language("ja"))}>
+				      <Nav.Link
+				      	onClick={() => dispatch(change_language("ja"))}
+				      	style={{color: "white"}}
+				      >
 				      	日本語
 				      </Nav.Link>
-				      <Nav.Link onClick={() => dispatch(change_language("en"))}>
+				      <Nav.Link
+				      	onClick={() => dispatch(change_language("en"))}
+				      	style={{color: "white"}}
+				      >
 				      	English
 				      </Nav.Link>
-				      <Nav.Link onClick={() => dispatch(change_language("zh_CN"))}>
+				      <Nav.Link
+				      	onClick={() => dispatch(change_language("zh_CN"))}
+				      	style={{color: "white"}}
+				      >
 				      	漢語
 				      </Nav.Link>
 				    </Nav>
@@ -70,49 +88,87 @@ const TopPage: React.FC<Props> = () => {
 			</div>
 			<div className="top-page-concept">
 				<div className="row">
-					<div className="col-6">
+					<div className="col-12 col-sm-6">
 						<div className="top-page-concept-left">
 							<hr className="left-hr" />
 							<h3>
 								Policy
 								<br />
-								<small>理念</small>
+								<small>
+									{ language.language == "ja" && <>理念</> }
+									{ language.language == "en" && <>Policy</> }
+									{ language.language == "zh_CN" && <>理想</> }
+								</small>
 							</h3>
 							<div className="row">
 								<div className="col-1">
+									<div className="top-page-concept-left-left-kakko">
 									「
+									</div>
 								</div>
 								<div className="col-10">
 									<p className="top-page-concept-left-content">
-										テストテストテストテストテスト
+										{ language.language == "ja" && <>お客様に "感動"と"満足"を与える</>}
+										{ language.language == "en" && <>Make customers impressed and satisfied.</>}
+										{ language.language == "zh_CN" && <>让客户留下 "感动" 和 "满意"。</>}
 									</p>
 								</div>
 								<div className="col-1">
-									<div style={{marginTop:"100px"}}>
+									<div className="top-page-concept-left-right-kakko">
 										」
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div className="col-6">
+					<div className="col-12 col-sm-6">
 						<div className="top-page-concept-right">
 							<p className="top-page-concept-right-content">
-								テストテストテストテストテスト
-								<br />
-								テストテストテストテストテストテスト
-								<br />
-								テストテストテストテストテストテストテストテストテスト
-								<br />
-								テストテストテストテストテストテストテストテストテスト
-								<br />
-								テストテストテストテストテストテストテストテストテスト
-								<br />
-								テストテストテストテストテストテストテストテストテスト
+								{ language.language == "ja" &&
+									<>
+									インターネットは、ますます成長しています。
+									<br />
+									そんな中で 私は、既存の枠組みに囚われず、新しい発想や方法を取り入れて、お客様の事業の発展に貢献していきます。
+									<br />
+									私の使命は、お客様の満足のために、質の高いサービスを提供し続けることです。
+									<br />
+									これからも、お客様の成長を支えていける存在になっていきます。
+									<br />
+									</>
+								}
+								{ language.language == "en" &&
+									<>
+									Internet keeps growing.
+									<br />
+									In these environment, I contribute to customer's business by adopting new ideas and methods without sticking to existing frameworks.
+									<br />
+									Our mission is to provide high quality services for customers's satisfaction.
+									<br />
+									From now on, I become one can support customer's growth.
+									<br />
+									</>
+								}
+								{ language.language == "zh_CN" &&
+									<>
+									网络网在继续的成长着。
+									<br />
+									在这个环境下，不要被固执现存的构造，采用新的想法跟方法，我要对客户的事业的发展贡献。
+									<br />
+									我的使命是，为了客户的满足，一直提供着高质的服务。
+									<br />
+									从此以来，我要成为可以贡献的人才。
+									<br />
+									</>
+								}
+								{/*
+								<button
+									className="btn btn-secondary"
+									style={{marginTop: "20px"}}
+								>
+									詳細はこちら
+								</button>
+								*/}
 							</p>
-							<button className="btn btn-secondary">
-								詳細はこちら
-							</button>
 						</div>
 					</div>
 				</div>
@@ -125,7 +181,8 @@ const TopPage: React.FC<Props> = () => {
 				</h3>
 				<hr className="hr-small" />
 				<div className="row">
-					<div className="col-4">
+					{/*
+					<div className="col-sm-4 col-12">
 						<h5 className="text-center">
 							{ language.language == "ja" && <>コーディング</>}
 							{ language.language == "en" && <>Coding</>}
@@ -166,7 +223,8 @@ const TopPage: React.FC<Props> = () => {
 							</div>
 						</p>
 					</div>
-					<div className="col-4">
+					*/}
+					<div className="col-sm-4 col-12">
 						<h5 className="text-center">
 							{ language.language == "ja" && <>デザイン</>}
 							{ language.language == "en" && <>Design</>}
@@ -208,7 +266,7 @@ const TopPage: React.FC<Props> = () => {
 							</p>
 						}
 					</div>
-					<div className="col-4">
+					<div className="col-sm-4 col-12">
 						<h5 className="text-center">
 							{ language.language == "ja" && <>外国語</>}
 							{ language.language == "en" && <>Language</>}
@@ -222,7 +280,7 @@ const TopPage: React.FC<Props> = () => {
 								<br/>
 								<div className="top-page-service-detail-text-inner">
 									日本語以外にも、英語(TOEIC850点)・中国語(漢語水平考試6級)が使えます。
-									この経験から、<a href="https://storageapi-334003.de.r.appspot.com" target="_blank">ホテルのホームページ</a>の多言語開発をしたこともあります。
+									この実績から、多言語開発をした経験もあります。
 								</div>
 							</p>
 						}
@@ -232,7 +290,7 @@ const TopPage: React.FC<Props> = () => {
 								<br/>
 								<div className="top-page-service-detail-text-inner">
 									Besides Japanese, can use English(TOEIC850 Points), Chinese(HSK6級).
-									I have experience to develop <a href="https://storageapi-334003.de.r.appspot.com" target="_blank">multi language homepage (Hotel's homepage)</a>.
+									I have experience to develop multi language homepage.
 								</div>
 							</p>
 						}
@@ -242,22 +300,59 @@ const TopPage: React.FC<Props> = () => {
 								<br/>
 								<div className="top-page-service-detail-text-inner">
 									除了日文以外，可以用英文(TOEIC850分)・汉语(汉语水平考试6级)。
-									因为这样，在<a href="https://storageapi-334003.de.r.appspot.com" target="_blank">旅馆的网页</a>的开发作了汉语跟英文的网页。
+									因为这样，在网页开发作了汉语跟英文的网页。
+								</div>
+							</p>
+						}
+					</div>
+					<div className="col-sm-4 col-12">
+						<h5 className="text-center">
+							{ language.language == "ja" && <>コンサルティング</>}
+							{ language.language == "en" && <>Consulting</>}
+							{ language.language == "zh_CN" && <>咨询</>}
+							<br/>
+							<small>Consulting</small>
+						</h5>
+						{ language.language == "ja" &&
+							<p className="top-page-service-detail-text">
+								<SiMinutemailer size={100}/>
+								<br/>
+								<div className="top-page-service-detail-text-inner">
+									日本や台湾・中国への進出提案ができます。
+								</div>
+							</p>
+						}
+						{ language.language == "en" &&
+							<p className="top-page-service-detail-text">
+								<SiMinutemailer size={100}/>
+								<br/>
+								<div className="top-page-service-detail-text-inner">
+									I can support your vision to advance to Japanese / Taiwanese / Chinese market.
+								</div>
+							</p>
+						}
+						{ language.language == "zh_CN" &&
+							<p className="top-page-service-detail-text">
+								<SiMinutemailer size={100}/>
+								<br/>
+								<div className="top-page-service-detail-text-inner">
+									我可以提出进入日本/台湾/中国市场的建议。
 								</div>
 							</p>
 						}
 					</div>
 				</div>
 			</div>
+			{/*
 			<div className="top-page-portfolio" id="works">
-				<h3 className="text-center">
+				<h3 className="text-center top-page-portfolio-title">
 					{ language.language == "ja" && <>ポートフォリオ</>}
 					{ language.language == "en" && <>Portfolio</>}
 					{ language.language == "zh_CN" && <>作品</>}
 				</h3>
 				<hr className="hr-small" />
 				<div className="row">
-					<div className="col-4">
+					<div className="col-sm-4 col-12">
 						<h4 className="portfolio-title">
 							{ language.language == "ja" && <>ホテルのホームページ</>}
 							{ language.language == "en" && <>Hotel homepage</>}
@@ -270,7 +365,7 @@ const TopPage: React.FC<Props> = () => {
 							<a href="https://storageapi-334003.de.r.appspot.com" target="_blank">ページはこちらから</a>
 						</p>
 					</div>
-					<div className="col-4">
+					<div className="col-sm-4 col-12">
 						<h4 className="portfolio-title">
 							{ language.language == "ja" && <>エディタ</>}
 							{ language.language == "en" && <>Editor</>}
@@ -286,7 +381,7 @@ const TopPage: React.FC<Props> = () => {
 							<br />
 						</p>
 					</div>
-					<div className="col-4">
+					<div className="col-sm-4 col-12">
 						<h4 className="portfolio-title">
 							{ language.language == "ja" && <>チャットアプリ</>}
 							{ language.language == "en" && <>Chat App</>}
@@ -301,7 +396,7 @@ const TopPage: React.FC<Props> = () => {
 							<a href="https://github.com/YmBIgo/React_Chat_Clone" target="_blank">Githubはこちら</a>
 						</p>
 					</div>
-					<div className="col-4">
+					<div className="col-sm-4 col-12">
 						<h4 className="portfolio-title">
 							{ language.language == "ja" && <>Twitter クローン</>}
 							{ language.language == "en" && <>Simple Twitter</>}
@@ -318,6 +413,7 @@ const TopPage: React.FC<Props> = () => {
 					</div>
 				</div>
 			</div>
+			*/}
 		</>
 	)
 }

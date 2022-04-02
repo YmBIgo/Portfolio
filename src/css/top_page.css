@@ -31,6 +31,10 @@
 	padding-top: 60px;
 	margin-top: -60px;
 }
+.top-page-inquery{
+	background-color: white;
+	height: 650px;
+}
 
 .top-page-header-black-section{
 	background-color: black;
@@ -183,6 +187,24 @@
 	padding-bottom: 80px;
 }
 
+.top-page-inquery-title{
+	margin-top: 40px;
+}
+.top-page-inquery-title-text{
+	width: 60%;
+	margin: 30px 20%;
+	text-align: left;
+}
+.top-page-inquery-form-content{
+	margin-top: 20px;
+}
+.top-page-inquery-input{
+	margin-bottom: 20px;
+}
+.top-page-inquery-textarea{
+	height: 150px;
+}
+
 .portfolio-image{
 	width: 90%;
 	margin-left: 5%;
@@ -190,15 +212,12 @@
 .portfolio-title{
 	margin: 10px 0
 }
-
 .top-page-portfolio-title{
 
 }
 .top-page-portfolio.is_animated {
 	animation: slideUp 2s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
-
-
 .portfolio-text {
 	width: 90%;
 	margin: 10px 5%;

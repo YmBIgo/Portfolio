@@ -1,5 +1,6 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useState} from "react"
 import {useSelector, useDispatch} from "react-redux"
+import axios from "axios"
 
 import {Link} from "react-router-dom"
 
@@ -22,20 +23,51 @@ const TopPage: React.FC<Props> = () => {
 	const dispatch = useDispatch()
 	const language = useSelector((state: RootState) => state.language)
 
+	const [name, setName] = useState<string>("")
+	const [email, setEmail] = useState<string>("")
+	const [content, setContent] = useState<string>("")
+	const [privacyAgreement, setPrivacyAgreement] = useState<boolean>(false)
+
+	const email_regex = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]+.[A-Za-z0-9]+$/;
+
+	const onClickInqueryBtn = () => {
+		const error_message = document.getElementById("top-page-inquery-error-message") as HTMLDivElement
+		const success_message = document.getElementById("top-page-inquery-success-message") as HTMLDivElement
+		success_message.style.display = "none"
+		if (!email_regex.test(email)) {
+			error_message.style.display = "block"
+			return
+		}
+		if (!name || !content || !privacyAgreement) {
+			error_message.style.display = "block"
+			return
+		}
+		error_message.style.display = "none"
+		// 
+		success_message.style.display = "block"
+		const cloud_function_url = "https://asia-northeast1-mercurial-snow-332407.cloudfunctions.net/PortfolioMail/emailPortfolio?name=" + name + "&content=" + content + "&email=" + email
+		console.log(cloud_function_url)
+		axios.get(cloud_function_url)
+		setName("")
+		setContent("")
+		setEmail("")
+		setPrivacyAgreement(false)
+	}
+
 	useEffect(() => {
 		const smooth_title = document.getElementsByClassName("smooth-header2-title")[0] as HTMLHeadingElement
 		setTimeout(() => {
 			smooth_title.classList.add("is-animated")
 		}, 1000)
-		const portfolio_title = document.getElementsByClassName("top-page-portfolio")[0] as HTMLHeadingElement
-		window.addEventListener('scroll', function(){
-			const scroll = window.scrollY
-			const height = window.innerHeight
-			const pos = portfolio_title.getBoundingClientRect().top + scroll
-			if (scroll > pos - height + 100 ) {
-				portfolio_title.classList.add('is_animated')
-			}
-		})
+		// const portfolio_title = document.getElementsByClassName("top-page-portfolio")[0] as HTMLHeadingElement
+		// window.addEventListener('scroll', function(){
+		// 	const scroll = window.scrollY
+		// 	const height = window.innerHeight
+		// 	const pos = portfolio_title.getBoundingClientRect().top + scroll
+		// 	if (scroll > pos - height + 100 ) {
+		// 		portfolio_title.classList.add('is_animated')
+		// 	}
+		// })
 	}, [])
 
 	return(
@@ -342,6 +374,68 @@ const TopPage: React.FC<Props> = () => {
 						}
 					</div>
 				</div>
+			</div>
+			<div className="top-page-inquery">
+				<h3 className="text-center top-page-inquery-title">
+					お問い合わせ
+				</h3>
+				<p className="text-left top-page-inquery-title-text">
+					この度は、私のホームページにご興味を持っていただきありがとうございます。
+					<br/>
+					ご依頼・ご質問など、お気軽にお問い合わせください。2営業日以内に折り返し連絡いたします。
+					<div
+						className="alert alert-danger"
+						style={{marginTop: "20px", display: "none"}}
+						id="top-page-inquery-error-message"
+					>
+						正しい情報を入力して下さい
+					</div>
+					<div
+						className="alert alert-success"
+						style={{marginTop: "20px", display: "none"}}
+						id="top-page-inquery-success-message"
+					>
+						ありがとうございます。送信に成功しました。
+					</div>
+					<div className="top-page-inquery-form-content">
+						<label>お名前</label>
+						<input
+							type="text"
+							className="form-control top-page-inquery-input"
+							onChange={(e) => setName(e.target.value)}
+							value={name}
+						/>
+						<label>メールアドレス</label>
+						<input
+							type="text"
+							className="form-control top-page-inquery-input"
+							onChange={(e) => setEmail(e.target.value)}
+							value={email}
+						/>
+						<label>内容</label>
+						<textarea
+							className="form-control top-page-inquery-textarea"
+							onChange={(e) => setContent(e.target.value)}
+							value={content}
+						>
+						</textarea>
+						<br />
+						<p>
+							<input
+								type="checkbox"
+								checked={privacyAgreement}
+								onChange={(e) => setPrivacyAgreement(!privacyAgreement)}
+							/>
+							　プライバシーポリシーに同意の上、送信します。
+						</p>
+						<button
+							className="btn btn-secondary"
+							onClick={() => onClickInqueryBtn()}
+						>
+							送信する
+						</button>
+					</div>
+				</p>
 			</div>
 			{/*
 			<div className="top-page-portfolio" id="works">

@@ -26,7 +26,7 @@ const TopPage: React.FC<Props> = () => {
 	const [name, setName] = useState<string>("")
 	const [email, setEmail] = useState<string>("")
 	const [content, setContent] = useState<string>("")
-	const [privacyAgreement, setPrivacyAgreement] = useState<boolean>(false)
+	const [privacyAgreement, setPrivacyAgreement] = useState<boolean>(true)
 
 	const email_regex = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]+.[A-Za-z0-9]+$/;
 
@@ -103,7 +103,7 @@ const TopPage: React.FC<Props> = () => {
 				      	onClick={() => dispatch(change_language("zh_CN"))}
 				      	style={{color: "white"}}
 				      >
-				      	漢語
+				      	中文
 				      </Nav.Link>
 				    </Nav>
 				  </Container>
@@ -331,7 +331,7 @@ const TopPage: React.FC<Props> = () => {
 								<FaLanguage size={100}/>
 								<br/>
 								<div className="top-page-service-detail-text-inner">
-									除了日文以外，可以用英文(TOEIC850分)・汉语(汉语水平考试6级)。
+									除了日文以外，可以用英文(TOEIC850分)・中文(汉语水平考试6级)。
 									因为这样，在网页开发作了汉语跟英文的网页。
 								</div>
 							</p>
@@ -377,42 +377,78 @@ const TopPage: React.FC<Props> = () => {
 			</div>
 			<div className="top-page-inquery">
 				<h3 className="text-center top-page-inquery-title">
-					お問い合わせ
+					{ language.language == "ja" && <>お問い合わせ</>}
+					{ language.language == "en" && <>Contact</>}
+					{ language.language == "zh_CN" && <>联络</>}
 				</h3>
 				<p className="text-left top-page-inquery-title-text">
-					この度は、私のホームページにご興味を持っていただきありがとうございます。
-					<br/>
-					ご依頼・ご質問など、お気軽にお問い合わせください。2営業日以内に折り返し連絡いたします。
+					{ language.language == "ja" &&
+						<>
+							この度は、私のホームページにご興味を持っていただきありがとうございます。
+							<br/>
+							ご依頼・ご質問など、お気軽にお問い合わせください。2営業日以内に折り返し連絡いたします。
+						</>
+					}
+					{ language.language == "en" &&
+						<>
+							Thank you for seeing our homepage.
+							<br/>
+							If you have questions or requests, please contact. I will contact you within 2 business days.
+						</>
+					}
+					{ language.language == "zh_CN" &&
+						<>
+							感谢你看我的网站。
+							<br/>
+							如果你有问题或者要求，联络我把。我会两个工作天内会回信的。
+						</>
+					}
 					<div
 						className="alert alert-danger"
 						style={{marginTop: "20px", display: "none"}}
 						id="top-page-inquery-error-message"
 					>
-						正しい情報を入力して下さい
+						{ language.language == "ja" && <>正しい情報を入力して下さい</>}
+						{ language.language == "en" && <>Input correct information.</>}
+						{ language.language == "zh_CN" && <>输入真确的资料。</>}
 					</div>
 					<div
 						className="alert alert-success"
 						style={{marginTop: "20px", display: "none"}}
 						id="top-page-inquery-success-message"
 					>
-						ありがとうございます。送信に成功しました。
+						{ language.language == "ja" && <>ありがとうございます。送信に成功しました。</>}
+						{ language.language == "en" && <>Thank you. Successfully send contents.</>}
+						{ language.language == "zh_CN" && <>谢谢。成功发信了。</>}
 					</div>
 					<div className="top-page-inquery-form-content">
-						<label>お名前</label>
+						<label>
+							{ language.language == "ja" && <>お名前</>}
+							{ language.language == "en" && <>Name</>}
+							{ language.language == "zh_CN" && <>名字</>}
+						</label>
 						<input
 							type="text"
 							className="form-control top-page-inquery-input"
 							onChange={(e) => setName(e.target.value)}
 							value={name}
 						/>
-						<label>メールアドレス</label>
+						<label>
+							{ language.language == "ja" && <>メールアドレス</>}
+							{ language.language == "en" && <>Email</>}
+							{ language.language == "zh_CN" && <>电子邮箱</>}
+						</label>
 						<input
 							type="text"
 							className="form-control top-page-inquery-input"
 							onChange={(e) => setEmail(e.target.value)}
 							value={email}
 						/>
-						<label>内容</label>
+						<label>
+							{ language.language == "ja" && <>内容</>}
+							{ language.language == "en" && <>Content</>}
+							{ language.language == "zh_CN" && <>内容</>}
+						</label>
 						<textarea
 							className="form-control top-page-inquery-textarea"
 							onChange={(e) => setContent(e.target.value)}
@@ -420,19 +456,25 @@ const TopPage: React.FC<Props> = () => {
 						>
 						</textarea>
 						<br />
+						{/*
 						<p>
 							<input
 								type="checkbox"
 								checked={privacyAgreement}
 								onChange={(e) => setPrivacyAgreement(!privacyAgreement)}
 							/>
-							　プライバシーポリシーに同意の上、送信します。
+							{ language.language == "ja" && <>プライバシーポリシーに同意の上、送信します。</>}
+							{ language.language == "en" && <>Agree on Privacy Policy and send.</>}
+							{ language.language == "zh_CN" && <>同意隐私政策并发送</>}
 						</p>
+						*/}
 						<button
 							className="btn btn-secondary"
 							onClick={() => onClickInqueryBtn()}
 						>
-							送信する
+							{ language.language == "ja" && <>送信する</>}
+							{ language.language == "en" && <>Send</>}
+							{ language.language == "zh_CN" && <>发信</>}
 						</button>
 					</div>
 				</p>

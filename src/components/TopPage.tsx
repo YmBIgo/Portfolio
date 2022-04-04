@@ -45,7 +45,7 @@ const TopPage: React.FC<Props> = () => {
 		error_message.style.display = "none"
 		// 
 		success_message.style.display = "block"
-		const cloud_function_url = "https://asia-northeast1-mercurial-snow-332407.cloudfunctions.net/PortfolioMail/emailPortfolio?name=" + name + "&content=" + content + "&email=" + email
+		const cloud_function_url = "https://asia-northeast1-mercurial-snow-332407.cloudfunctions.net/PortfolioEmailSendgrid/emailPortfolio?name=" + name + "&content=" + content + "&email=" + email
 		console.log(cloud_function_url)
 		axios.get(cloud_function_url)
 		setName("")

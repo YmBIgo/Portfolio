@@ -46,7 +46,6 @@ const TopPage: React.FC<Props> = () => {
 		// 
 		success_message.style.display = "block"
 		const cloud_function_url = "https://asia-northeast1-mercurial-snow-332407.cloudfunctions.net/PortfolioEmailSendgrid/emailPortfolio?name=" + name + "&content=" + content + "&email=" + email
-		console.log(cloud_function_url)
 		axios.get(cloud_function_url)
 		setName("")
 		setContent("")
@@ -59,6 +58,10 @@ const TopPage: React.FC<Props> = () => {
 		setTimeout(() => {
 			smooth_title.classList.add("is-animated")
 		}, 1000)
+		const name_title = document.getElementsByClassName("top-page-profile-my-name")[0] as HTMLHeadingElement
+		setTimeout(() => {
+			name_title.classList.add("is-animated")
+		}, 200)
 		// const portfolio_title = document.getElementsByClassName("top-page-portfolio")[0] as HTMLHeadingElement
 		// window.addEventListener('scroll', function(){
 		// 	const scroll = window.scrollY
@@ -112,9 +115,45 @@ const TopPage: React.FC<Props> = () => {
 			<div className="top-page-header2">
 				<div className="top-page-header2-title">
 					<h1 className="smooth-header2-title">
-						Kazuya Kurihara
+						Welcome to my site.
 					</h1>
 					<div className="top-page-header2-img">
+					</div>
+				</div>
+			</div>
+			<div className="top-page-profile">
+				<div className="top-page-profile1">
+					<div className="row">
+						<div className="col-sm-3">
+							<img
+								src="https://storage.googleapis.com/kurihara_kazuya_image/profile/kazuya_kurihara.png"
+								className="top-page-profile1-img"
+							/>
+						</div>
+						<div className="col-sm-9">
+							<div className="top-page-profile1-detail">
+								<h1 className="top-page-profile-my-name">
+									栗原和也
+									{"　"}
+									<small>Kazuya Kurihara</small>
+								</h1>
+								<div className="top-page-profile1-job">
+									担当：プログラミング・デザイン
+								</div>
+								<p>
+									Email：coffeecupjp@gmail.com
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="top-page-profile2">
+					<div className="top-page-profile2-detail">
+						1996年、東京生まれ。
+						<br/>
+						中学校から慶應中等部に入学し、大学まで慶應。高校の時は、囲碁で個人神奈川県優勝・団体全国9位の結果を残した。
+						<br/>
+						新卒でコンサル会社に入社するも、半年で退社。その後は、プログラミングの受託や実家のホテルの手伝いをしている。
 					</div>
 				</div>
 			</div>

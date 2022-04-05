@@ -15,6 +15,34 @@
 	padding-top: 80px;
 	margin-top: -60px;
 }
+@media (min-width: 576px) {
+	.top-page-profile{
+		height: 400px;
+		width: 80%;
+		margin: 0 10%;
+	}
+	.top-page-profile1{
+		height: 230px;
+		margin: 20px 0 10px 0;
+	}
+	.top-page-profile2{
+		height: 170px;
+	}
+}
+@media (max-width: 576px) {
+	.top-page-profile{
+		height: 700px;
+		width: 90%;
+		margin: 0 5%;
+	}
+	.top-page-profile1{
+		height: 480px;
+		margin: 20px 0 10px 0;
+	}
+	.top-page-profile2{
+		height: 220px;
+	}
+}
 .top-page-concept{
 	position: relative;
 	z-index: 1;
@@ -97,6 +125,82 @@
 }
 .smooth-header2-title.is-animated {
   clip-path: inset(0);
+}
+
+/* profile */
+
+.top-page-profile1-detail h1 {
+  clip-path: inset(0 100% 0 0);
+  display: inline-block;
+  font-weight: bold;
+  transition: 1.2s cubic-bezier(0.37, 0, 0.63, 1);
+  transition-property: clip-path;
+  line-height: 1;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.top-page-profile1-detail h1.is-animated{
+	clip-path: inset(0);
+}
+
+@media (min-width: 576px) {
+	.top-page-profile1-img{
+		width: 100%;
+	}
+	.top-page-profile1-detail {
+		width: 95%;
+		margin: 0 2.5%;
+		text-align: left;
+	}
+	.top-page-profile1-detail h1 {
+		font-size: 60px;
+	}
+	.top-page-profile1-job{
+		background-color: #919191;
+		color: white;
+		margin-bottom: 20px;
+		font-size: 20px;
+		padding: 5px;
+		width: 70%;
+	}
+	.top-page-profile1-detail h1 small {
+		font-size: 30px;
+	}
+	.top-page-profile2-detail{
+		width: 95%;
+		margin: 0 2.5%;
+		text-align: left;
+	}
+}
+
+@media (max-width: 576px) {
+	.top-page-profile1-img{
+		width: 90%;
+	}
+	.top-page-profile1-detail {
+		width: 95%;
+		margin: 0 2.5%;
+		text-align: left;
+		border-bottom: 1px solid rgba(100, 100, 100, .5);
+	}
+	.top-page-profile1-detail h1 {
+		font-size: 30px;
+	}
+	.top-page-profile1-detail h1 small {
+		font-size: 15px;
+	}
+	.top-page-profile1-job{
+		background-color: #919191;
+		color: white;
+		font-size: 15px;
+		padding: 5px;
+		width: 100%;
+	}
+	.top-page-profile2-detail{
+		width: 95%;
+		margin: 0 2.5%;
+		text-align: left;
+	}
 }
 
 .top-page-concept-left{

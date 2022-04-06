@@ -142,6 +142,8 @@ const TopPage: React.FC<Props> = () => {
 								</div>
 								<p>
 									Email：coffeecupjp@gmail.com
+									<br/>
+									趣味：囲碁(ネット7段)・山登り
 								</p>
 							</div>
 						</div>
@@ -508,7 +510,7 @@ const TopPage: React.FC<Props> = () => {
 						</p>
 						*/}
 						<button
-							className="btn btn-secondary"
+							className="btn btn-danger btn-sm"
 							onClick={() => onClickInqueryBtn()}
 						>
 							{ language.language == "ja" && <>送信する</>}

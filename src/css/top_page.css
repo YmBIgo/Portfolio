@@ -292,7 +292,12 @@
 }
 
 .top-page-inquery-title{
-	margin-top: 40px;
+	margin: 40px 20% 0 20%;
+	padding: 10px;
+	width: 60%;
+	background-color: black;
+	color: white;
+
 }
 .top-page-inquery-title-text{
 	width: 60%;

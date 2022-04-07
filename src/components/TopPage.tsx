@@ -7,8 +7,6 @@ import {Link} from "react-router-dom"
 import {RootState} from "../type/root_reducer"
 import {change_language} from "../redux/action/language"
 
-import {Navbar, Nav} from "react-bootstrap"
-import {Container} from "react-bootstrap"
 import "../css/top_page.css"
 
 import {BsCodeSlash,
@@ -54,10 +52,10 @@ const TopPage: React.FC<Props> = () => {
 	}
 
 	useEffect(() => {
-		const smooth_title = document.getElementsByClassName("smooth-header2-title")[0] as HTMLHeadingElement
-		setTimeout(() => {
-			smooth_title.classList.add("is-animated")
-		}, 1000)
+		// const smooth_title = document.getElementsByClassName("smooth-header2-title")[0] as HTMLHeadingElement
+		// setTimeout(() => {
+		// 	smooth_title.classList.add("is-animated")
+		// }, 1000)
 		const name_title = document.getElementsByClassName("top-page-profile-my-name")[0] as HTMLHeadingElement
 		setTimeout(() => {
 			name_title.classList.add("is-animated")
@@ -79,44 +77,11 @@ const TopPage: React.FC<Props> = () => {
 				<div className="top-page-header-black-section slidein anim is-animated">
 				</div>
 			</div>
-			<div className="top-page-navbar">
-				<Navbar className="fixed-top" style={{backgroundColor: "black"}}>
-				  <Container>
-				    <Navbar.Brand
-				    	href="#home"
-				    	style={{color: "white"}}
-				    >
-				    	K Kurihara
-				    </Navbar.Brand>
-				    <Navbar.Toggle />
-				    <Nav className="justify-content-end">
-				      <Nav.Link
-				      	onClick={() => dispatch(change_language("ja"))}
-				      	style={{color: "white"}}
-				      >
-				      	日本語
-				      </Nav.Link>
-				      <Nav.Link
-				      	onClick={() => dispatch(change_language("en"))}
-				      	style={{color: "white"}}
-				      >
-				      	English
-				      </Nav.Link>
-				      <Nav.Link
-				      	onClick={() => dispatch(change_language("zh_CN"))}
-				      	style={{color: "white"}}
-				      >
-				      	中文
-				      </Nav.Link>
-				    </Nav>
-				  </Container>
-				</Navbar>
-			</div>
 			<div className="top-page-header2">
 				<div className="top-page-header2-title">
-					<h1 className="smooth-header2-title">
+{/*					<h1 className="smooth-header2-title">
 						Welcome to my site.
-					</h1>
+					</h1>*/}
 					<div className="top-page-header2-img">
 					</div>
 				</div>
@@ -126,7 +91,7 @@ const TopPage: React.FC<Props> = () => {
 					<div className="row">
 						<div className="col-sm-3">
 							<img
-								src="https://storage.googleapis.com/kurihara_kazuya_image/profile/kazuya_kurihara.png"
+								src="https://storage.googleapis.com/kurihara_kazuya_image/profile/kazuya_kurihara2.jpg"
 								className="top-page-profile1-img"
 							/>
 						</div>
@@ -141,7 +106,7 @@ const TopPage: React.FC<Props> = () => {
 									担当：プログラミング・デザイン
 								</div>
 								<p>
-									Email：coffeecupjp@gmail.com
+									<span className="top-page-profile1-email">Email：coffeecupjp@gmail.com</span>
 									<br/>
 									趣味：囲碁(ネット7段)・山登り
 								</p>
@@ -156,6 +121,14 @@ const TopPage: React.FC<Props> = () => {
 						中学校から慶應中等部に入学し、大学まで慶應。高校の時は、囲碁で個人神奈川県優勝・団体全国9位の結果を残した。
 						<br/>
 						新卒でコンサル会社に入社するも、半年で退社。その後は、プログラミングの受託や実家のホテルの手伝いをしている。
+					</div>
+					<div className="top-page-profile-2-detail-btn">
+						<Link
+							to="/profile"
+							className="btn btn-secondary w-25 profile-btn"
+						>
+							プロフィールを見る
+						</Link>
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,135 @@
+.profile-page-main-area{
+	padding-top: 58px;
+	padding-bottom: 60px;
+	background-color: rgba(240, 240, 240, .9);
+	width: 1000px;
+}
+
+/* Card1 */
+
+.profile-page-card1{
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 20px;
+	background-color: white;
+	height: 450px;
+	border-left: 5px solid #f5531b;
+	border-radius: 2px;
+}
+.profile-page-card1-img{
+	width: 50%;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+h1.profile-page-card1-title{
+	margin-top: 10px;
+	font-size: 30px;
+	margin-bottom: 0px;
+	font-weight: 800;
+}
+.profile-page-card1-left{
+	margin-top: 30px;
+	text-align: center;
+}
+.profile-page-card1-job {
+	font-weight: 1000;
+}
+.profile-page-card1-info{
+	font-size: 15px;
+	margin-top: 40px;
+	margin-left: 40px;
+	line-height: 35px;
+	text-align: left;
+}
+.profile-page-card1-info-url{
+	color: black;
+}
+.profile-page-card1-center{
+	padding-top: 30px;
+}
+.profile-page-card1-self-intro{
+	background-color: rgba(240, 240, 240, .9);
+	font-size: 15px;
+	height: 300px;
+	padding: 30px 20px;
+	text-align: left;
+	font-weight: 500;
+	line-height: 25px;
+}
+.profile-page-card1-self-intro-title{
+	color: #f5531b;
+	font-size: 22px;
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+
+.profile-page-card2{
+	width: 80%;
+	height: 1800px;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 20px;
+	padding: 40px 60px;
+	background-color: white;
+	border-radius: 2px;
+	text-align: left;
+}
+.profile-page-card2-work-title{
+	color: #f5531b;
+	font-size: 22px;
+	margin-bottom: 30px;
+}
+.profile-page-card2-work-content-area{
+	border-left: 5px solid #f5531b;
+	height: 650px;
+	padding: 20px 40px;
+}
+.profile-page-card2-work-content-area-title{
+	font-size: 17px;
+	font-weight: 800;
+	line-height: 22px;
+}
+.profile-page-card2-work-content-area-content{
+	margin-top: 15px;
+	font-size: 15px;
+}
+.profile-page-card2-education-content-area {
+	border-left: 5px solid #f5531b;
+	height: 400px;
+	padding: 20px 40px;
+}
+.profile-page-card2-education-content-area-title{
+	font-size: 17px;
+	font-weight: 800;
+	line-height: 22px;
+}
+.profile-page-card2-education-content-area-content{
+	margin-top: 15px;
+	font-size: 15px;
+}
+.profile-page-card2-portfolio-title{
+	color: #f5531b;
+	font-size: 22px;
+	margin-bottom: 30px;
+}
+.profile-page-card2-portfolio-content-area{
+	border-left: 5px solid #f5531b;
+	height: 200px;
+	padding: 20px 40px;
+}
+.profile-page-card2-portfolio-content-area-img{
+	width: 200px;
+	border: 1px solid rgba(100, 100, 100, .2);
+}
+.profile-page-card2-portfolio-content-area-title{
+	width: 200px;
+	font-size: 15px;
+	font-weight: 800;
+	text-align: center;
+	margin-top: 10px;
+}
+
+
+
+

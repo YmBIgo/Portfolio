@@ -1,22 +1,49 @@
-.profile-page-main-area{
-	padding-top: 58px;
-	padding-bottom: 60px;
-	background-color: rgba(240, 240, 240, .9);
-	width: 1000px;
+@media (min-width: 576px) {
+	.profile-page-main-area{
+		padding-top: 58px;
+		padding-bottom: 60px;
+		background-color: rgba(240, 240, 240, .9);
+		width: 1000px;
+	}
+}
+
+@media (max-width: 576px) {
+	.profile-page-main-area{
+		padding-top: 58px;
+		padding-bottom: 60px;
+		background-color: rgba(240, 240, 240, .9);
+		width: 100%;
+	}
 }
 
 /* Card1 */
 
-.profile-page-card1{
-	width: 80%;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 20px;
-	background-color: white;
-	height: 450px;
-	border-left: 5px solid #f5531b;
-	border-radius: 2px;
+@media (min-width: 576px) {
+	.profile-page-card1{
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+		margin-top: 20px;
+		background-color: white;
+		/*height: 450px;*/
+		border-left: 5px solid #f5531b;
+		border-radius: 2px;
+	}
 }
+
+@media (max-width: 576px) {
+	.profile-page-card1{
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-top: 20px;
+		background-color: white;
+		/*height: 450px;*/
+		border-left: 5px solid #f5531b;
+		border-radius: 2px;
+	}
+}
+
 .profile-page-card1-img{
 	width: 50%;
 	margin: 0 auto;
@@ -48,14 +75,28 @@ h1.profile-page-card1-title{
 .profile-page-card1-center{
 	padding-top: 30px;
 }
-.profile-page-card1-self-intro{
-	background-color: rgba(240, 240, 240, .9);
-	font-size: 15px;
-	height: 300px;
-	padding: 30px 20px;
-	text-align: left;
-	font-weight: 500;
-	line-height: 25px;
+@media (min-width: 576px) {
+	.profile-page-card1-self-intro{
+		background-color: rgba(240, 240, 240, .9);
+		font-size: 15px;
+		/*height: 300px;*/
+		padding: 30px 20px;
+		text-align: left;
+		font-weight: 500;
+		line-height: 25px;
+	}
+}
+@media (max-width: 576px) {
+	.profile-page-card1-self-intro{
+		background-color: rgba(240, 240, 240, .9);
+		font-size: 15px;
+		/*height: 300px;*/
+		padding: 30px 20px;
+		margin: 0 20px 20px 20px;
+		text-align: left;
+		font-weight: 500;
+		line-height: 25px;
+	}
 }
 .profile-page-card1-self-intro-title{
 	color: #f5531b;
@@ -63,27 +104,49 @@ h1.profile-page-card1-title{
 	margin-bottom: 10px;
 	font-weight: 700;
 }
-
-.profile-page-card2{
-	width: 80%;
-	height: 1800px;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 20px;
-	padding: 40px 60px;
-	background-color: white;
-	border-radius: 2px;
-	text-align: left;
+@media (min-width: 576px) {
+	.profile-page-card2{
+		width: 80%;
+		/*height: 1800px;*/
+		margin-left: 10%;
+		margin-right: 10%;
+		margin-top: 20px;
+		padding: 40px 60px;
+		background-color: white;
+		border-radius: 2px;
+		text-align: left;
+	}
+}
+@media (max-width: 576px) {
+	.profile-page-card2{
+		width: 90%;
+		/*height: 1800px;*/
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-top: 20px;
+		padding: 40px 20px;
+		background-color: white;
+		border-radius: 2px;
+		text-align: left;
+	}
 }
 .profile-page-card2-work-title{
 	color: #f5531b;
 	font-size: 22px;
 	margin-bottom: 30px;
 }
-.profile-page-card2-work-content-area{
-	border-left: 5px solid #f5531b;
-	height: 650px;
-	padding: 20px 40px;
+@media (min-width: 576px) {
+	.profile-page-card2-work-content-area{
+		border-left: 5px solid #f5531b;
+		/*height: 650px;*/
+		padding: 20px 40px;
+	}
+}
+@media (max-width: 576px) {
+	.profile-page-card2-work-content-area{
+		border-left: 5px solid #f5531b;
+		padding: 20px 40px;
+	}
 }
 .profile-page-card2-work-content-area-title{
 	font-size: 17px;
@@ -96,7 +159,7 @@ h1.profile-page-card1-title{
 }
 .profile-page-card2-education-content-area {
 	border-left: 5px solid #f5531b;
-	height: 400px;
+	/*height: 400px;*/
 	padding: 20px 40px;
 }
 .profile-page-card2-education-content-area-title{
@@ -115,7 +178,7 @@ h1.profile-page-card1-title{
 }
 .profile-page-card2-portfolio-content-area{
 	border-left: 5px solid #f5531b;
-	height: 200px;
+	/*height: 200px;*/
 	padding: 20px 40px;
 }
 .profile-page-card2-portfolio-content-area-img{

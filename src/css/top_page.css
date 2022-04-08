@@ -14,39 +14,51 @@
 }
 @media (min-width: 576px) {
 	.top-page-profile{
-		height: 400px;
-		width: 900px;
+		/*height: 400px;*/
+		width: 1200px;
 		margin: 0 50px;
 	}
 	.top-page-profile1{
-		height: 230px;
+		/*height: 230px;*/
 		margin: 20px 0 10px 0;
 	}
 	.top-page-profile2{
-		height: 170px;
+		/*height: 170px;*/
+		margin-bottom: 30px;
+	}
+	.top-page-concept{
+		width: 1200px;
+	}
+	.top-page-service{
+		width: 1200px;
+	}
+	.top-page-portfolio {
+		width: 1200px;
+	}
+	.top-page-inquery{
+		width: 1200px;
 	}
 }
 @media (max-width: 576px) {
 	.top-page-profile{
-		height: 700px;
+		/*height: 700px;*/
 		width: 90%;
 		margin: 0 5%;
 	}
 	.top-page-profile1{
-		height: 480px;
+		/*height: 480px;*/
 		margin: 20px 0 10px 0;
 	}
 	.top-page-profile2{
-		height: 220px;
+		/*height: 220px;*/
+		margin-bottom: 20px;
 	}
 }
 .top-page-concept{
-	width: 1000px;
 	position: relative;
 	z-index: 1;
 }
 .top-page-service{
-	width: 1000px;
 	background-color: black;
 	color: white;
 	padding-top: 90px;
@@ -54,13 +66,11 @@
 	z-index: 100;
 }
 .top-page-portfolio {
-	width: 1000px;
 	background-color: white;
 	padding-top: 60px;
 	margin-top: -60px;
 }
 .top-page-inquery{
-	width: 1000px;
 	background-color: white;
 	height: 650px;
 }
@@ -128,7 +138,7 @@
   clip-path: inset(0);
 }
 
-/* profile */
+/* Profile */
 
 .top-page-profile1-detail h1 {
   clip-path: inset(0 100% 0 0);
@@ -196,10 +206,11 @@
 		font-size: 15px;
 		padding: 5px;
 		width: 100%;
+		margin-bottom: 10px;
 	}
 	.top-page-profile2-detail{
 		width: 95%;
-		margin: 0 2.5%;
+		margin: 20px 2.5%;
 		text-align: left;
 	}
 }
@@ -212,7 +223,8 @@
 	margin-top: 20px;
 }
 
-/*  */
+/* Concept */
+
 .top-page-concept-left{
 	background-color: rgba(100, 100, 100, .15);
 	height: 500px;
@@ -290,6 +302,8 @@
 	}
 }
 
+/* Service */
+
 .top-page-service-detail-text{
 	width: 80%;
 	margin-left: 10%;
@@ -301,6 +315,8 @@
 	padding-bottom: 80px;
 }
 
+/* Inquery */
+
 .top-page-inquery-title{
 	margin: 40px 20% 0 20%;
 	padding: 10px;
@@ -309,10 +325,19 @@
 	color: white;
 
 }
-.top-page-inquery-title-text{
-	width: 60%;
-	margin: 30px 20%;
-	text-align: left;
+@media (min-width: 576px) {
+	.top-page-inquery-title-text{
+		width: 60%;
+		margin: 30px 20%;
+		text-align: left;
+	}
+}
+@media (max-width: 576px) {
+	.top-page-inquery-title-text{
+		width: 80%;
+		margin: 30px 10%;
+		text-align: left;
+	}
 }
 .top-page-inquery-form-content{
 	margin-top: 20px;
@@ -323,6 +348,8 @@
 .top-page-inquery-textarea{
 	height: 150px;
 }
+
+/* Portfolio */
 
 .portfolio-image{
 	width: 90%;

@@ -17,7 +17,7 @@ const Profile: React.FC<Props> = () => {
 				{/* Card1 */}
 				<div className="profile-page-card1">
 					<div className="row">
-						<div className="col-4">
+						<div className="col-sm-4">
 							<div className="profile-page-card1-left">
 								<img
 									src="https://storage.googleapis.com/kurihara_kazuya_image/profile/kazuya_kurihara2.jpg"
@@ -45,7 +45,7 @@ const Profile: React.FC<Props> = () => {
 								</div>
 							</div>
 						</div>
-						<div className="col-7">
+						<div className="col-sm-7">
 							<div className="profile-page-card1-center">
 								<p className="profile-page-card1-self-intro">
 									<div className="profile-page-card1-self-intro-title">
@@ -61,7 +61,7 @@ const Profile: React.FC<Props> = () => {
 								</p>
 							</div>
 						</div>
-						<div className="col-1">
+						<div className="col-sm-1">
 						</div>
 					</div>
 				</div>

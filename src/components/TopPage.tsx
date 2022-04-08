@@ -125,7 +125,7 @@ const TopPage: React.FC<Props> = () => {
 					<div className="top-page-profile-2-detail-btn">
 						<Link
 							to="/profile"
-							className="btn btn-secondary w-25 profile-btn"
+							className="btn btn-secondary profile-btn"
 						>
 							プロフィールを見る
 						</Link>
